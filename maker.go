@@ -9,7 +9,7 @@ import (
 
 func main() {
     // Create a "badges" folder if it doesn't exist
-    err := os.MkdirAll("badges", os.ModePerm)
+    err := os.MkdirAll("out", os.ModePerm)
     if err != nil {
         fmt.Println("Error creating 'badges' folder:", err)
         return
@@ -46,7 +46,7 @@ func main() {
         svg := generateSVG(label, status)
 
         // Create the filename for the SVG
-        filename := fmt.Sprintf("badges/%s-%s.svg", label, status)
+        filename := fmt.Sprintf("out/%s-%s.svg", label, status)
 
         // Create and write the SVG to the file
         svgFile, err := os.Create(filename)
